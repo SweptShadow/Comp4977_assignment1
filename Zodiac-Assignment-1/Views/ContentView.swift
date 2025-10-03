@@ -1,20 +1,28 @@
+/**
+ @Author: Dalraj Bains
+ @Author: Yujin Jeong
+ @Author: Brian Diep
+ */
 import SwiftUI
 
 struct ContentView: View {
-//    @StateObject private var zodiacData = ZodiacData()
+    
+    @StateObject private var zodiacData = ZodiacViewModel()
     
     var body: some View {
         
         TabView {
             ZodiacHomeView()
+                .environmentObject(zodiacData)
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
             
             ZodiacCalculatorView()
+                .environmentObject(zodiacData)
                 .tabItem {
-                    Image(systemName: "calculator")
+                    Image(systemName: "x.squareroot")
                     Text("Calculator")
                 }
             
@@ -25,6 +33,7 @@ struct ContentView: View {
                 }
         }
         .tint(AppColors.primary)
+        .background(AppColors.background)
     }
     
 }

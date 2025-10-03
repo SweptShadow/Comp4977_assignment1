@@ -1,9 +1,8 @@
-//
-//  AppColors.swift
-//  Zodiac-Assignment-1
-//
-//  Created by Yujin Jeong on 2025-09-29.
-//
+/**
+ @Author: Yujin Jeong
+ @Author: Dalraj Bains
+ @Author: Brian Diep
+ */
 import SwiftUI
 
 struct AppColors {
@@ -36,4 +35,7 @@ struct AppColors {
     
     // Peach
     static let lightOrange = Color(red: 1.0, green: 0.85, blue: 0.7)
+    
+    // Dark text for good readability
+    static let text = Color(red: 0.2, green: 0.2, blue: 0.3)
     }

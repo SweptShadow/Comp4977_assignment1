@@ -1,26 +1,25 @@
+/**
+ @Author: Dalraj Bains
+ @Author: Yujin Jeong
+ @Author: Brian Diep
+ */
 import SwiftUI
 
 struct ZodiacListView: View {
-    
-    @StateObject private var viewModel = ZodiacViewModel()
+    @EnvironmentObject var zodiacViewModel: ZodiacViewModel
     
     var body: some View {
         
-        List(viewModel.signs) { sign in
+        List {
             
-            NavigationLink(destination: ZodiacDetailView(sign:sign)){
-                
-                VStack(alignment: .leading) {
-                    Text(sign.name)
-                        .font(.headline)
-                    Text(sign.description)
-                        .font(.subheadline)
+            ForEach(zodiacViewModel.zodiacSigns) { sign in
+                NavigationLink(destination: ZodiacDetailView(zodiacSign: sign)) {
+                    AnimalRowView(zodiacSign: sign)
                 }
-        
+                .listRowBackground(AppColors.cardBackground)
             }
-            
         }
-        .navigationTitle("Chinese Zodiac")
+        .background(AppColors.background)
+        .scrollContentBackground(.hidden)
     }
 }
-
