@@ -6,8 +6,6 @@
  Display zodiac animal row
  */
 
-// FIXME: Currently emoji and name is hardcoded
-
 import SwiftUI
 
 struct AnimalRowView: View {
