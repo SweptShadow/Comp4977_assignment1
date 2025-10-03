@@ -6,5 +6,4 @@ struct ZodiacSign: Identifiable {
     let name: String
     let description: String
     let years: [Int]
-    
 }

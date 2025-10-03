@@ -13,7 +13,7 @@ class ZodiacViewModel: ObservableObject {
         ZodiacSign(name: "Horse", description: "a", years: [ 2014, 2026, 2038]),
         ZodiacSign(name: "Goat", description: "a", years: [ 2015, 2027, 2039]),
         ZodiacSign(name: "Monkey", description: "a", years: [ 2016, 2028, 2040]),
-        ZodiacSign(name: "Roster", description: "a", years: [ 2017, 2029, 2041]),
+        ZodiacSign(name: "Rooster", description: "a", years: [ 2017, 2029, 2041]),
         ZodiacSign(name: "Dog", description: "a", years: [ 2018, 2030, 2042]),
         ZodiacSign(name: "Pig", description: "a", years: [ 2019, 2031, 2043])
     ]
@@ -21,7 +21,7 @@ class ZodiacViewModel: ObservableObject {
     func sign (for year: Int) -> ZodiacSign? {
         
         // Chinese Zodiac repeat every 12 year & using 2008 as base because that was year of rat
-        let cycle = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Roster","Dog","Pig"]
+        let cycle = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"]
         let index = (year - 2008) % 12
         let normalizedIndex = (index + 12) % 12
         let signName = cycle[normalizedIndex]
