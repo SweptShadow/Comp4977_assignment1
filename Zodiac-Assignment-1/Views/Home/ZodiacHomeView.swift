@@ -36,6 +36,7 @@ struct ZodiacHomeView: View {
     }
 }
 
-#Preview {
+#Preview("Zodiac Home") {
     ZodiacHomeView()
+        .environmentObject(ZodiacViewModel())
 }

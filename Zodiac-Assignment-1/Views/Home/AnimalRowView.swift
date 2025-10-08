@@ -43,3 +43,9 @@ struct AnimalRowView: View {
         )
     }
 }
+
+#Preview("Animal Row - From ViewModel") {
+    AnimalRowView(zodiacSign: ZodiacViewModel().zodiacSigns[0])
+        .padding()
+        .background(AppColors.background)
+}

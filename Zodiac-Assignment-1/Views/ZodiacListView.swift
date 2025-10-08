@@ -74,3 +74,9 @@ struct ZodiacListView: View {
 }
 
 
+#Preview("Zodiac List View") {
+    NavigationStack {
+        ZodiacListView()
+            .environmentObject(ZodiacViewModel())
+    }
+}

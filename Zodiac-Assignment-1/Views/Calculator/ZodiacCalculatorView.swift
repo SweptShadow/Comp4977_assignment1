@@ -244,3 +244,8 @@ struct ZodiacCalculatorView: View {
                 .padding(.horizontal)
             }
         }
+
+#Preview("Zodiac Calculator View") {
+    ZodiacCalculatorView()
+        .environmentObject(ZodiacViewModel())
+}

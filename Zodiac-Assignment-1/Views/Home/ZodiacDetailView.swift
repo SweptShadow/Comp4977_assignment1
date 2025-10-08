@@ -62,3 +62,12 @@ struct DetailSection: View {
         .cornerRadius(10)
     }
 }
+
+
+#Preview("Detail Section") {
+    DetailSection(
+        title: "Key Traits",
+        content: "Confident, Intelligent, Enthusiastic, Charismatic"
+    )
+    .padding()
+}
