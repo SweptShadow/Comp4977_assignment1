@@ -8,35 +8,38 @@
 
 import SwiftUI
 
+// Single row that shows a zodiac emoji and its name. Used insida a list.
 struct AnimalRowView: View {
     
     // Zodiac sign model
     let zodiacSign: ZodiacSign
     
     var body: some View {
+        
         HStack {
+            
             Text(zodiacSign.emoji)
                 .font(.largeTitle)
+                .frame(width: 44)
             
-            VStack(alignment: .leading, spacing: 4) {
-                Text(zodiacSign.name)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(AppColors.text)
-                
-                Text(zodiacSign.traits)
-                    .font(.caption)
-                    .foregroundColor(AppColors.secondary)
-                    .lineLimit(1)
-            }
+            Text(zodiacSign.name)
+                .font(.headline.weight(.semibold))
+                .foregroundColor(AppColors.text)
             
             Spacer()
-            
-            Image(systemName: "chevron.right")
-                .foregroundColor(AppColors.primary)
-                .font(.caption)
         }
-        .padding(.vertical, 8)
-        .background(AppColors.cardBackground)
+        .padding(14)
+        
+        // Card style background with rounded corners.
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(AppColors.cardBackground)
+                .overlay(                     //This gives border around the card.
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(AppColors.primary.opacity(0.08), lineWidth: 1)
+                )
+                // Giving shadow effect so it looks like slightly lifted.
+                .shadow(color: AppColors.shadow, radius: 6, x: 0, y: 3)
+        )
     }
 }

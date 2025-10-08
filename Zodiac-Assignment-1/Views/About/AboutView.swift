@@ -41,7 +41,7 @@ struct AboutView: View {
                             .foregroundColor(AppColors.primary)
                         
                         VStack(spacing: 15) {
-                            StudentInfoCard(name: "Yujin Jeong", studentID: "A0")
+                            StudentInfoCard(name: "Yujin Jeong", studentID: "A01310724")
                             StudentInfoCard(name: "Dalraj Bains", studentID: "A0")
                             StudentInfoCard(name: "Brian Diep", studentID: "A0")
                         }

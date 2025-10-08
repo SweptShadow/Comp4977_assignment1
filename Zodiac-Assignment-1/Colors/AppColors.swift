@@ -2,6 +2,8 @@
  @Author: Yujin Jeong
  @Author: Dalraj Bains
  @Author: Brian Diep
+ 
+ This file is for defining custom pastel tone clours.
  */
 import SwiftUI
 
