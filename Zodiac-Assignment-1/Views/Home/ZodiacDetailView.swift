@@ -26,7 +26,7 @@ struct ZodiacDetailView: View {
                 Text(zodiacSign.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(AppColors.primary)
+                    .foregroundColor(AppColors.text)
                 
                 VStack(alignment: .leading, spacing: 15) {
                     DetailSection(title: "Description", content: zodiacSign.description)
@@ -36,10 +36,37 @@ struct ZodiacDetailView: View {
                 }
             }
             .padding()
+
         }
-        .navigationTitle(zodiacSign.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .background(
+            LinearGradient(
+                colors: [
+                    AppColors.background,
+                    AppColors.lightGreen.opacity(0.20),
+                    AppColors.lightOrange.opacity(0.18)
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
+        
+        .toolbarTitleDisplayMode(.inline)
+        .toolbar {
+            // This ToolbarItem for centering navigation title and font size bigger.
+            ToolbarItem(placement: .principal) {
+                Text("Chinese Zodiac")
+                    .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .foregroundColor(AppColors.text)
+            }
+        }
+        // Change the colour of the navigation bar background to match the other page's theme
+        .toolbarBackground(AppColors.background.opacity(0.95), for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+
     }
+    
+    
 }
 
 struct DetailSection: View {
@@ -50,7 +77,7 @@ struct DetailSection: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.headline)
-                .foregroundColor(AppColors.primary)
+                .foregroundColor(AppColors.text)
             
             Text(content)
                 .font(.body)
@@ -58,16 +85,25 @@ struct DetailSection: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
+        .background(
+            RoundedRectangle(cornerRadius: 18)
+                .fill(AppColors.cardBackground)
+                .shadow(color: AppColors.shadow, radius: 8, x: 0, y: 4)
+        )
     }
 }
 
 
-#Preview("Detail Section") {
-    DetailSection(
-        title: "Key Traits",
-        content: "Confident, Intelligent, Enthusiastic, Charismatic"
-    )
-    .padding()
+#Preview("Zodiac Detail View") {
+    NavigationStack {
+        ZodiacDetailView(zodiacSign: ZodiacSign(
+            name: "Dragon",
+            emoji: "🐉",
+            imageName: "dragon",
+            description: "The Dragon is a symbol of power, strength, and good fortune in Chinese culture. Those born in the Year of the Dragon are believed to be confident, intelligent, and natural leaders.",
+            traits: "Confident, Intelligent, Enthusiastic, Charismatic",
+            compatibility: "Rat, Monkey, Rooster",
+            years: [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024]
+        ))
+    }
 }
