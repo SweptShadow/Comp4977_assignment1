@@ -76,8 +76,8 @@ class ZodiacViewModel: ObservableObject {
         ZodiacSign(
             name: "Sheep",
             emoji: "🐑",
-            imageName: "sheep",
-            description: "People born in the Year of Ram are elegant and highly accomplished in the arts. They seem to be, at first glance, better off than those born in the zodiac's other years, but they are also often shy, pessimistic, and puzzled about life. They are usually deeply religious yet timid by nature. Sometimes clumsy in speech, they are always passionate about what they do and what they believe in. They never have to worry about having the best in life, as their abilities make money for them, and they can enjoy the creature comforts they enjoy. Wise, gentle, and compassionate.",
+            imageName: "goat",
+            description: "People born in the Year of Sheep are elegant and highly accomplished in the arts. They seem to be, at first glance, better off than those born in the zodiac's other years, but they are also often shy, pessimistic, and puzzled about life. They are usually deeply religious yet timid by nature. Sometimes clumsy in speech, they are always passionate about what they do and what they believe in. They never have to worry about having the best in life, as their abilities make money for them, and they can enjoy the creature comforts they enjoy. Wise, gentle, and compassionate.",
             traits: "Elegant, artistic, gentle, compassionate, shy",
             compatibility: "Rabbits, Pigs, and Horses",
             years: [1919, 1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027, 2039]

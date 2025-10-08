@@ -35,3 +35,7 @@ struct ZodiacHomeView: View {
         .tint(AppColors.primary)
     }
 }
+
+#Preview {
+    ZodiacHomeView()
+}

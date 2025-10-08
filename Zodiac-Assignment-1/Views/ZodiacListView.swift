@@ -72,3 +72,5 @@ struct ZodiacListView: View {
         .animation(.snappy, value: searchTerm)
     }
 }
+
+
