@@ -1,0 +1,10 @@
+.DS_Store
+
+.cursor/
+
+.vscode/
+
+node_module/
+
+dist/
+build/
